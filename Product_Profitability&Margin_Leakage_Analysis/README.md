@@ -108,10 +108,10 @@ Null Values       : 1 blank row → 0
 ## Recommendations
  
 | Priority | Action |
-|---|---|---|
-| 🔴 High | Revisi Discount Policy untuk Kategori Produk Furniture × Corporate & Consumer. Discount yang diberikan ke Corporate dan Consumer di Furniture tidak mempertimbangkan bahwa kategori ini sudah punya structural cost disadvantage dari shipping. Solusinya bukan menghapus diskon, tapi menyesuaikan maximum discount % untuk Furniture dengan memasukkan "cost to serve" (shipping) sebagai variabel dalam formula diskon. Expected impactnya: Reduce Furniture leakage dari 14.5% ke <11%. |
-| 🟡 Medium | Diversifikasi dari Long Tail ke Core. Dari 436 produk di Long Tail, identifikasi produk mana yang memiliki margin tertinggi tapi volume rendah. Berikan push promosi atau visibility lebih ke produk-produk ini agar secara volume bisa meningkat dan "naik kelas" ke Core. Expected Impactnya: Diversifikasi profit base dari 7 ke 15+ produk. |
-| 🟡 Medium | Protect The Head. 7 produk yang generate 50% profit harus diprioritaskan dalam hal: ketersediaan stok, SLA pengiriman, dan tidak dijadikan subjek eksperimen diskon agresif. Once ada gangguan di level ini langsung terasa ke bottom line. Expected Impact: Melindungi $1.17M gross profit (The Head) dari disruption. |
+|---|---|
+| 🔴 High | Revisi Discount Policy untuk Kategori Produk Furniture × Corporate & Consumer. Discount yang diberikan ke Corporate dan Consumer di Furniture tidak mempertimbangkan bahwa kategori ini sudah punya structural cost disadvantage dari shipping. Solusinya bukan menghapus diskon, tapi menyesuaikan maximum discount % untuk Furniture dengan memasukkan "cost to serve" (shipping) sebagai variabel dalam formula diskon. Expected impactnya: Reduce Furniture leakage dari 14.5% ke <11%. 
+| 🟡 Medium | Diversifikasi dari Long Tail ke Core. Dari 436 produk di Long Tail, identifikasi produk mana yang memiliki margin tertinggi tapi volume rendah. Berikan push promosi atau visibility lebih ke produk-produk ini agar secara volume bisa meningkat dan "naik kelas" ke Core. Expected Impactnya: Diversifikasi profit base dari 7 ke 15+ produk. 
+| 🟡 Medium | Protect The Head. 7 produk yang generate 50% profit harus diprioritaskan dalam hal: ketersediaan stok, SLA pengiriman, dan tidak dijadikan subjek eksperimen diskon agresif. Once ada gangguan di level ini langsung terasa ke bottom line. Expected Impact: Melindungi $1.17M gross profit (The Head) dari disruption. 
  
 ---
  
