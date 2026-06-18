@@ -13,26 +13,6 @@ This project investigates whether high revenue actually translates to high profi
  
 ---
  
-## Repository Structure
- 
-```
-├── data/
-│   ├── Retail_Raw_Dataset.csv          # Original dirty dataset
-│   └── Retail_Clean_Dataset.csv        # Cleaned dataset (Power Query)
-├── queries/
-│   ├── 00_data_quality_check.sql
-│   ├── 01_BQ1_baseline_profitability.sql
-│   ├── 02_BQ2_category_profitability.sql
-│   ├── 03_BQ3_profit_leakage.sql
-│   ├── 04_BQ4_customer_segment.sql
-│   └── 05_BQ5_pareto_analysis.sql
-├── dashboard/
-│   └── screenshots/
-└── README.md
-```
- 
----
- 
 ## Dataset Overview
  
 | Attribute | Detail |
