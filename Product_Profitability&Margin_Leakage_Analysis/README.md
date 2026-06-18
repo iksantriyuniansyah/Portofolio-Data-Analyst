@@ -5,12 +5,12 @@
 
 ## Project Overview
  
-This project investigates whether high revenue actually translates to high profitability in a retail business — and where profit leakage occurs across product categories and customer segments.
- 
-**Main Business Problem:** Management allocates resources based on revenue performance, not profitability. Without understanding true profit contribution per category and segment, the business risks over-investing in areas that erode margin.
- 
-**Objective:** Identify categories and customer segments driving true profit, quantify leakage sources (discounts & shipping), and detect concentration risk at the product level.
- 
+Proyek ini meneliti apakah revenue yang tinggi benar-benar berujung pada profitabilitas yang tinggi dalam bisnis ritel serta di mana terjadinya kebocoran laba di berbagai kategori produk dan segmen pelanggan.
+
+**Main Business Problem:** Manajemen mengalokasikan sumber daya berdasarkan kinerja pendapatan, bukan profitabilitas. Tanpa memahami kontribusi laba sesungguhnya per kategori dan segmen, bisnis berisiko melakukan investasi berlebihan di bidang-bidang yang justru mengikis margin.
+
+**Objective:** Identifikasi kategori dan segmen pelanggan yang menjadi pendorong laba riil, ukur sumber-sumber kebocoran (diskon & ongkos kirim), serta deteksi risiko konsentrasi pada tingkat produk.
+
 ---
  
 ## Dataset Overview
@@ -57,18 +57,18 @@ This project investigates whether high revenue actually translates to high profi
 
 ---
 
-## Data Cleaning (Power Query / M Language)
+## Data Cleaning (Power Query)
  
 **Key Issues Found:**
  
-| Issue | Action Taken |
-|---|---|
-| All financial columns stored as text with `$` and `,` | Converted to numeric via Power Query |
-| Date columns stored as strings | Converted to DATE type |
-| 4 derived columns (Sub Total, Discount $, Order Total, Total) had mathematical inconsistencies across ~99% of rows | Recalculated from valid raw inputs |
-| 1 completely blank row | Removed |
-| 4 rows: Cost Price > Retail Price with positive Profit Margin (mathematical contradiction) | Margin recalculated — resulted in negative values, kept as valid business finding |
- 
+| Masalah | Tindakan yang Diambil |
+| :--- | :--- |
+| Semua kolom keuangan tersimpan sebagai teks dengan simbol `$` dan `,` | Dikonversi menjadi tipe numerik melalui Power Query |
+| Kolom tanggal tersimpan sebagai string (teks) | Dikonversi menjadi tipe *DATE* (tanggal) |
+| 4 kolom turunan (*Sub Total*, *Discount $*, *Order Total*, *Total*) memiliki ketidaksesuaian matematis di hampir ~99% baris | Dihitung ulang menggunakan data input mentah yang valid |
+| 1 baris kosong seutuhnya | Dihapus / Dibuang |
+| 4 baris: Harga Modal (*Cost Price*) > Harga Jual (*Retail Price*) namun memiliki Margin Keuntungan positif (kontradiksi matematis) | Margin dihitung ulang — menghasilkan nilai negatif, tetap dipertahankan sebagai temuan bisnis yang valid |
+
 **Before vs After:**
 ```
 Rows              : 5,000 → 4,999
@@ -76,9 +76,9 @@ Math Consistency  : 0.76% → 99.98%
 Null Values       : 1 blank row → 0
 ```
  
-**Cleaning Decision Note:**
-> Sub Total, Discount Dollar, Order Total, and Total columns had near-universal mathematical inconsistencies — likely caused by data entry errors at the source system. All four derived columns were recalculated from raw inputs (Retail Price, Quantity, Discount %, Shipping Cost) which proved 99.56% consistent.
- 
+> 💡 **Catatan Keputusan Pembersihan (Data Cleaning):**
+> Kolom *Sub Total*, *Discount Dollar*, *Order Total*, dan *Total* memiliki ketidaksesuaian matematis yang terjadi hampir di seluruh data — kemungkinan besar disebabkan oleh kesalahan input data (*data entry errors*) pada sistem sumber. Keempat kolom turunan tersebut dihitung ulang dari input mentah (Harga Jual, Jumlah Pesanan, % Diskon, Biaya Pengiriman) yang setelah diverifikasi terbukti memiliki tingkat konsistensi sebesar 99,56%.
+
 ---
 
 ## Key Insights
