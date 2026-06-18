@@ -26,7 +26,37 @@ This project investigates whether high revenue actually translates to high profi
 | Customer Types | Corporate, Consumer, Home Office, Small Business |
  
 ---
+
+### Data Dictionary
  
+| Column | Data Type | Description | Notes |
+|---|---|---|---|
+| Order No | VARCHAR | Unique order identifier | 1 order bisa multi-row (multi-item) |
+| Order Date | DATE | Tanggal order dibuat | Format: YYYY/MM/DD |
+| Ship Date | DATE | Tanggal pengiriman | |
+| Customer Name | VARCHAR | Nama customer | |
+| City | VARCHAR | Kota customer | |
+| State | VARCHAR | State (NSW / VIC) | |
+| Customer Type | VARCHAR | Segmen customer | Corporate, Consumer, Home Office, Small Business |
+| Account Manager | VARCHAR | Sales representative | |
+| Order Priority | VARCHAR | Prioritas order | Low, Medium, High, Critical |
+| Product Name | VARCHAR | Nama produk | |
+| Product Category | VARCHAR | Kategori produk | Office Supplies, Technology, Furniture |
+| Product Container | VARCHAR | Jenis packaging | |
+| Ship Mode | VARCHAR | Metode pengiriman | |
+| Cost Price | DECIMAL | Harga beli per unit (COGS) | AUD |
+| Retail Price | DECIMAL | Harga jual per unit | AUD |
+| Profit Margin | DECIMAL | Retail Price − Cost Price per unit | AUD, bisa negatif |
+| Order Quantity | INTEGER | Jumlah item dipesan | |
+| Sub Total | DECIMAL | Retail Price × Order Quantity | Gross Revenue |
+| Discount Percentage | DECIMAL | % diskon yang diberikan | 0–1 format |
+| Discount Dollar | DECIMAL | Sub Total × Discount % | AUD |
+| Order Total | DECIMAL | Sub Total − Discount Dollar | Net revenue after discount |
+| Shipping Cost | DECIMAL | Biaya pengiriman ditanggung bisnis | AUD |
+| Total | DECIMAL | Order Total − Shipping Cost | Net revenue after all deductions |
+
+---
+
 ## Data Cleaning (Power Query / M Language)
  
 **Key Issues Found:**
@@ -77,7 +107,7 @@ Null Values       : 1 blank row → 0
  
 ## Recommendations
  
-| Priority | Action | Owner |
+| Priority | Action |
 |---|---|---|
 | 🔴 High | Revisi Discount Policy untuk Kategori Produk Furniture × Corporate & Consumer. Discount yang diberikan ke Corporate dan Consumer di Furniture tidak mempertimbangkan bahwa kategori ini sudah punya structural cost disadvantage dari shipping. Solusinya bukan menghapus diskon, tapi menyesuaikan maximum discount % untuk Furniture dengan memasukkan "cost to serve" (shipping) sebagai variabel dalam formula diskon. Expected impactnya: Reduce Furniture leakage dari 14.5% ke <11%. |
 | 🟡 Medium | Diversifikasi dari Long Tail ke Core. Dari 436 produk di Long Tail, identifikasi produk mana yang memiliki margin tertinggi tapi volume rendah. Berikan push promosi atau visibility lebih ke produk-produk ini agar secara volume bisa meningkat dan "naik kelas" ke Core. Expected Impactnya: Diversifikasi profit base dari 7 ke 15+ produk. |
